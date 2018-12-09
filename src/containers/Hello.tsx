@@ -1,27 +1,33 @@
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
-import Hello from '../components/Hello';
-import * as actions from '../actions';
-import { StoreState } from '../types';
+import Hello from '../components/hello/Hello';
+import {
+  EnthusiasmAction,
+  incrementEnthusiasm,
+  decrementEnthusiasm
+} from '../ducks/modules/hello';
 
-export const mapStateToProps = ({
-  enthusiasmLevel,
-  languageName
-}: StoreState) => {
+export interface StateToProps {
+  hello: {
+    languageName: string;
+    enthusiasmLevel: number;
+  };
+}
+
+const mapStateToProps = (state: StateToProps) => {
   return {
-    enthusiasmLevel,
-    name: languageName
+    name: state.hello.languageName,
+    enthusiasmLevel: state.hello.enthusiasmLevel
   };
 };
 
-export const mapDispatchToProps = (
-  dispatch: Dispatch<actions.EnthusiasmAction>
-) => {
-  return {
-    onIncrement: () => dispatch(actions.incrementEnthusiasm()),
-    onDecrement: () => dispatch(actions.decrementEnthusiasm())
-  };
-};
+const mapDispatchToProps = (dispatch: Dispatch<EnthusiasmAction>) => ({
+  onIncrement: () => dispatch(incrementEnthusiasm()),
+  onDecrement: () => dispatch(decrementEnthusiasm())
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hello);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Hello);
