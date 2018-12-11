@@ -1,12 +1,12 @@
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
-import Hello from '../components/hello/Hello';
+import Hello from '../components/modules/Hello';
 import {
   EnthusiasmAction,
   incrementEnthusiasm,
   decrementEnthusiasm
-} from '../ducks/modules/hello';
+} from '../ducks/hello';
 
 export interface StateToProps {
   hello: {

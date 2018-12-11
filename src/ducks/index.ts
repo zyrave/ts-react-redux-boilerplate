@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import hello from './modules/hello';
+import hello from './hello';
+import users from './users';
 
 export default combineReducers({
-  hello
+  hello,
+  users
 });

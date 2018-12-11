@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import * as serviceWorker from './serviceWorker';
-import store from './ducks/store';
-import Hello from './containers/Hello';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import store from './store';
+import Routes from './routes';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Hello />
+    <Router>
+      <Routes />
+    </Router>
   </Provider>,
   document.getElementById('root') as HTMLElement
 );

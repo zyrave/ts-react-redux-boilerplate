@@ -1,15 +1,20 @@
 import React from 'react';
 
-import './Hello.css';
+import './Hello.scss';
 
-interface Props {
+interface IProps {
   name: string;
   enthusiasmLevel?: number;
   onIncrement?: () => void;
   onDecrement?: () => void;
 }
 
-const Hello = ({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) => {
+const Hello: React.SFC<IProps> = ({
+  name,
+  enthusiasmLevel = 1,
+  onIncrement,
+  onDecrement
+}: IProps) => {
   if (enthusiasmLevel <= 0) {
     throw new Error('You could be a little more enthusiastic. :D');
   }
