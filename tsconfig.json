@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "module": "ESNext",
-    "lib": [
-      "es6",
-      "dom",
-      "esnext.asynciterable"
-    ],
+    "lib": ["es6", "dom", "esnext.asynciterable"],
     "jsx": "preserve",
     "sourceMap": true,
     "outDir": "./dist",
@@ -43,8 +39,5 @@
     "jest",
     "src/setupTests.ts"
   ],
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx"
-  ]
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }

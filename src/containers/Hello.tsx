@@ -1,7 +1,7 @@
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
-import Hello from '../components/modules/Hello';
+import Hello from '../components/Hello';
 import {
   EnthusiasmAction,
   incrementEnthusiasm,

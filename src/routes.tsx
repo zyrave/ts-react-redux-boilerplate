@@ -1,16 +1,18 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
 
-import Dashboard from './components/modules/Dashboard';
-import Hello from './containers/Hello';
-import Todo from './components/modules/Todo';
-import Users from './containers/Users';
+import DefaultLayout from './components/Layout/DefaultLayout';
 
-export default () => (
-  <Switch>
-    <Route path="/" exact component={Dashboard} />
-    <Route path="/hello" component={Hello} />
-    <Route path="/todo" component={Todo} />
-    <Route path="/users" component={Users} />
-  </Switch>
-);
+const Dashboard = React.lazy(() => import('./components/Dashboard'));
+const Hello = React.lazy(() => import('./containers/Hello'));
+const Todo = React.lazy(() => import('./components/Todo'));
+const Users = React.lazy(() => import('./containers/Users'));
+
+const routes = [
+  { path: '/', exact: true, name: 'Home', component: DefaultLayout },
+  { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/hello', name: 'Hello', component: Hello },
+  { path: '/todo', name: 'Todo', component: Todo },
+  { path: '/users', name: 'Users', component: Users }
+];
+
+export default routes;

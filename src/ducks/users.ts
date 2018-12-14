@@ -24,34 +24,34 @@ export type FETCH_SUCCESS = typeof FETCH_SUCCESS;
 export const FETCH_ERROR = 'FETCH_ERROR';
 export type FETCH_ERROR = typeof FETCH_ERROR;
 
-export interface fetchRequest {
+export interface FetchRequest {
   type: FETCH_REQUEST;
 }
 
-export interface fetchSuccess {
+export interface FetchSuccess {
   type: FETCH_SUCCESS;
   payload: User[];
 }
 
-export interface fetchError {
+export interface FetchError {
   type: FETCH_ERROR;
   payload: string;
 }
 
-export type UserAction = fetchRequest | fetchSuccess | fetchError;
+export type UserAction = FetchRequest | FetchSuccess | FetchError;
 
 /* ---------------- Action Creators ---------------- */
 
-export const fetchRequest = (): fetchRequest => ({
+export const fetchRequest = (): FetchRequest => ({
   type: FETCH_REQUEST
 });
 
-export const fetchSuccess = (data: User[]): fetchSuccess => ({
+export const fetchSuccess = (data: User[]): FetchSuccess => ({
   type: FETCH_SUCCESS,
   payload: data
 });
 
-export const fetchError = (message: string): fetchError => ({
+export const fetchError = (message: string): FetchError => ({
   type: FETCH_ERROR,
   payload: message
 });

@@ -1,7 +1,7 @@
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
-import Users from '../components/modules/Users';
+import Users from '../components/Users';
 import { UserAction, fetchRequest, User } from '../ducks/users';
 
 export interface StateToProps {
