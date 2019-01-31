@@ -1,4 +1,4 @@
-# [TypeScript-Handbook](https://github.com/Microsoft/TypeScript-Handbook/blob/master/pages/tutorials/React.md)
+# TypeScript React Boilerplate with Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
